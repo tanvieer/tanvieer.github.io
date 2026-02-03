@@ -314,16 +314,18 @@
                         <div class="card-body">
                             <h5 class="card-title">AI Configuration Automation App – Fraunhofer IWU</h5>
                             <p class="card-text">I developed an application that automates configuration file generation for AI model training, using data captured from smart edge devices. The tool reduces manual effort and errors, and automates deployment of trained models into production environments.</p>
-                            <p class="text-muted"><strong>Tech:</strong> React JS, Python, NodeJS, Docker, GitLab.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-ai">More Details</button>
+                            <p class="text-muted mt-2"><strong>Tech:</strong> React JS, Python, NodeJS, Docker, GitLab.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Multi-Client Accounting & Inventory Platform – Q3 Aurelia</h5>
+                            <h5 class="card-title">Fixed Asset Management System – Q3 Aurelia</h5>
                             <p class="card-text">I built web applications for fixed asset management, accounting, API-based journal import, and advanced inventory management serving EU and Asian clients.</p>
-                            <p class="text-muted"><strong>Tech:</strong> .NET Core, ASP.NET, MS SQL, Entity Framework, REST APIs.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-fixed">More Details</button>
+                            <p class="text-muted mt-2"><strong>Tech:</strong> .NET Core, ASP.NET, MS SQL, Entity Framework, REST APIs.</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +334,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Core Banking & Mobile Banking APIs – Leads Corporation</h5>
                             <p class="card-text">I contributed to a core banking solution and led backend API development for mobile banking applications for multiple banks. The systems handled customer data, transactions, deposits, loans, and secure mobile interactions.</p>
-                            <p class="text-muted"><strong>Tech:</strong> ASP.NET, WebAPI2, OracleDB, PL/SQL, MVC, MS DevOps/TFS.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-banking">More Details</button>
+                            <p class="text-muted mt-2"><strong>Tech:</strong> ASP.NET, WebAPI2, OracleDB, PL/SQL, MVC, MS DevOps/TFS.</p>
                         </div>
                     </div>
                 </div>
@@ -731,6 +734,86 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="images/awards/Achievement-ACC-Final 2018.jpg" class="img-fluid" alt="Achievement ACC Final 2018">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for AI Configuration Automation -->
+    <div class="modal fade" id="modal-ai" tabindex="-1" aria-labelledby="modal-aiLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-aiLabel">AI Configuration Automation App – Fraunhofer IWU</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Developed a comprehensive application to automate configuration file generation for training AI models using data from smart edge devices.</li>
+                        <li>Designed and implemented a React.js UI for managing AI model configurations and interacting with the system.</li>
+                        <li>Built backend services in Python and Node.js for data processing, configuration generation, and integration with AI training pipelines.</li>
+                        <li>Implemented automated deployment using Docker containers for consistent, reproducible environments.</li>
+                        <li>Collaborated with data scientists and ML engineers to align requirements and ensure compatibility with existing workflows.</li>
+                        <li>Integrated with GitLab for version control, collaboration, code reviews, and CI/CD.</li>
+                        <li>Documented architecture, APIs, and deployment processes; conducted testing and QA for reliability and performance.</li>
+                    </ul>
+                    <p><strong>Key Technologies:</strong> React.js, Python, Node.js, GitLab, Docker.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Fixed Asset Management -->
+    <div class="modal fade" id="modal-fixed" tabindex="-1" aria-labelledby="modal-fixedLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-fixedLabel">Fixed Asset Management System – Q3 Aurelia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Built a Fixed Asset Management System to streamline asset tracking and management and reduce manual effort.</li>
+                        <li>Developed a RESTful API that integrated with existing systems, achieving a reported 95% reduction in manual data entry.</li>
+                        <li>Implemented automated monitoring to alert administrators about potential issues before user impact.</li>
+                        <li>Built a secure authentication system to protect customer data.</li>
+                        <li>Optimized database queries for better performance.</li>
+                    </ul>
+                    <p><strong>Key Technologies:</strong> ASP.NET, RESTful APIs, MS SQL Server, Git (with GitLab for version control and CI/CD).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Core Banking -->
+    <div class="modal fade" id="modal-banking" tabindex="-1" aria-labelledby="modal-bankingLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-bankingLabel">Core Banking & Mobile Banking APIs – Leads Corporation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>BankUltimus (Core Banking Solution)</h6>
+                    <ul>
+                        <li>Worked on BankUltimus, an enterprise-level core banking solution supporting retail, SME, and corporate banking operations (trade finance, loans, compliance, etc.).</li>
+                        <li>Focused on the General Banking module and its broad set of functionalities.</li>
+                        <li>Coordinated with cross-functional teams to capture requirements, prioritize tasks, and deliver features and fixes on time.</li>
+                        <li>Managed task distribution and code reviews for junior developers, enforcing coding standards and best practices.</li>
+                        <li>Maintained the development server and ensured smooth deployment and integration with other modules.</li>
+                        <li>Performed testing and bug fixing based on client feedback and QA findings.</li>
+                        <li>Prepared deployment packages and documentation for new features and bug fixes.</li>
+                    </ul>
+                    <h6>Mobile Banking Application API Development</h6>
+                    <ul>
+                        <li>Developed secure and scalable APIs for the FSIBL mobile banking application, enabling transactions, account management, and other banking services.</li>
+                        <li>Implemented security measures including T-PINs, OTPs, and RSA Tokens for strong customer data protection.</li>
+                        <li>Gathered and handled client requirements, collaborating with cross-functional teams to deliver features such as fund transfers, bill payments, QR-code payments, account information, and service requests.</li>
+                        <li>Managed deployments to ensure smooth integration and continuous delivery of API services to production.</li>
+                        <li>Documented API specifications, usage guidelines, and maintenance procedures for other developers and stakeholders.</li>
+                        <li>Performed maintenance, performance optimization, bug fixes, and integration of new features and services.</li>
+                    </ul>
+                    <p><strong>Key Technologies:</strong> ASP.NET, WebAPI2, MVC, OracleDB, PL/SQL, stored procedures, Entity Framework, Code-First, Agile, Scrum, Windows Server 2016, TFS.</p>
                 </div>
             </div>
         </div>
