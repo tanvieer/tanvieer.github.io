@@ -9,15 +9,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --section-bg: #f8f9fa;
+            --bg-color: #f0f4f8;
+            --text-color: #1a202c;
+            --section-bg: #ffffff;
             --card-bg: #ffffff;
-            --navbar-bg: #000000;
-            --hero-bg: linear-gradient(135deg, #1a7e3b 0%, #3ec76c 100%);
-            --border-color: #dee2e6;
-            --shadow: rgba(0,0,0,0.1);
-            --accent-color: #007bff;
+            --navbar-bg: #1a6348;
+            --hero-bg: linear-gradient(135deg, #1a7e3b 0%, #2ecc71 100%);
+            --border-color: #e2e8f0;
+            --shadow: rgba(0,0,0,0.08);
+            --accent-color: #1a6348;
+            --text-secondary: #4a5568;
+            --card-hover-shadow: rgba(26, 99, 72, 0.15);
         }
 
         [data-theme="dark"] {
@@ -25,11 +27,13 @@
             --text-color: #ffffff;
             --section-bg: #1e1e1e;
             --card-bg: #2a2a2a;
-            --navbar-bg: #333333;
+            --navbar-bg: #1a1a1a;
             --hero-bg: linear-gradient(135deg, #0d3a25 0%, #1a6348 100%);
             --border-color: #444444;
-            --shadow: rgba(255,255,255,0.1);
-            --accent-color: #4dabf7;
+            --shadow: rgba(255,255,255,0.05);
+            --accent-color: #4ade80;
+            --text-secondary: #a0aec0;
+            --card-hover-shadow: rgba(74, 222, 128, 0.2);
         }
 
         body {
@@ -54,10 +58,15 @@
 
         .card {
             border: none;
-            box-shadow: 0 4px 8px var(--shadow);
-            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
             background-color: var(--card-bg);
             color: var(--text-color);
+            border-radius: 16px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 30px var(--card-hover-shadow);
         }
 
         .skill-badge {
@@ -91,11 +100,11 @@
         }
 
         .text-muted {
-            color: #6c757d !important;
+            color: var(--text-secondary) !important;
         }
 
         [data-theme="dark"] .text-muted {
-            color: #adb5bd !important;
+            color: var(--text-secondary) !important;
         }
 
         .contact-info {
@@ -153,7 +162,7 @@
 
         .community-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px var(--shadow);
+            box-shadow: 0 12px 30px var(--card-hover-shadow);
         }
 
         .community-card .role {
@@ -192,14 +201,15 @@
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 15px var(--shadow);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
         }
 
         .language-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--card-hover-shadow);
         }
 
         .language-card .flag-icon {
@@ -363,13 +373,14 @@
         }
 
         .hero .profile-img {
-            border: 5px solid rgba(255,255,255,0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            border: 5px solid rgba(255,255,255,0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .hero .profile-img:hover {
             transform: scale(1.05);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
         }
 
         /* Improved Section Headers */
@@ -410,11 +421,15 @@
         }
 
         .quick-facts {
-            background: var(--section-bg);
+            background: linear-gradient(135deg, #f0fff4, #e6fffa);
             border-radius: 15px;
             padding: 25px;
             margin-top: 25px;
             border-left: 4px solid var(--accent-color);
+        }
+
+        [data-theme="dark"] .quick-facts {
+            background: var(--section-bg);
         }
 
         .quick-facts h4 {
@@ -460,7 +475,7 @@
 
         .timeline-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 8px 25px var(--shadow);
+            box-shadow: 0 8px 30px var(--card-hover-shadow);
         }
 
         .timeline-item::before {
@@ -499,13 +514,14 @@
             border-radius: 20px;
             padding: 30px;
             height: 100%;
-            box-shadow: 0 4px 15px var(--shadow);
+            box-shadow: 0 4px 20px var(--shadow);
             border-top: 4px solid var(--accent-color);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .education-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 35px var(--card-hover-shadow);
         }
 
         .education-card .icon {
@@ -532,7 +548,12 @@
             border-radius: 20px;
             padding: 30px;
             height: 100%;
-            box-shadow: 0 4px 15px var(--shadow);
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: box-shadow 0.3s;
+        }
+
+        .skills-category:hover {
+            box-shadow: 0 8px 30px var(--card-hover-shadow);
         }
 
         .skills-category h4 {
@@ -549,7 +570,7 @@
         }
 
         .skill-badge {
-            background: var(--section-bg);
+            background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
             border: 1px solid var(--border-color);
             border-radius: 25px;
             padding: 8px 18px;
@@ -558,6 +579,10 @@
             color: var(--text-color);
             font-weight: 500;
             transition: all 0.3s;
+        }
+
+        [data-theme="dark"] .skill-badge {
+            background: var(--section-bg);
         }
 
         .skill-badge:hover {
@@ -581,7 +606,7 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px var(--shadow);
+            box-shadow: 0 15px 40px var(--card-hover-shadow);
         }
 
         .project-card .card-body {
@@ -628,12 +653,13 @@
             border-radius: 20px;
             overflow: hidden;
             height: 100%;
-            box-shadow: 0 4px 15px var(--shadow);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .award-card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--card-hover-shadow);
         }
 
         .award-card img {
@@ -661,12 +687,13 @@
             border-radius: 20px;
             overflow: hidden;
             height: 100%;
-            box-shadow: 0 4px 15px var(--shadow);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .cert-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--card-hover-shadow);
         }
 
         .cert-card img {
