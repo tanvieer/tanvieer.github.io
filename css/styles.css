@@ -765,6 +765,39 @@ p {
 }
 
 /* ==========================================
+   Modal Styles (Dark Mode Support)
+   ========================================== */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+.modal-header .modal-title {
+    color: var(--text-color);
+}
+
+.modal-header .btn-close {
+    filter: var(--btn-close-filter, none);
+}
+
+[data-theme="dark"] .modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-body {
+    color: var(--text-color);
+}
+
+.modal-footer {
+    border-top-color: var(--border-color);
+}
+
+/* ==========================================
    Footer
    ========================================== */
 .footer {
