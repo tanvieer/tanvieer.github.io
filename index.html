@@ -1,14 +1,454 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hexalayers</title>
-    <script type="module" crossorigin src="/assets/index-DHekLx0y.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-zBuYgcsT.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Tanvir Islam - Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="assets/index-zBuYgcsT.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .skill-badge {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 5px 15px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #007bff;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #007bff;
+            border-radius: 50%;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mohammad Tanvir Islam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1>Software Engineer – Web, Mobile & Real-Time Systems</h1>
+                    <p class="lead">Building reliable backends and real-time sports tracking apps in Germany.</p>
+                    <p>I am Mohammad Tanvir Islam, a software engineer based in Chemnitz, Germany, currently working at Racemap GmbH in Dresden. With over seven years of experience across banking, fintech, SaaS, and sports tech, I specialize in .NET backends and React Native mobile applications. I enjoy turning complex business requirements into robust, scalable software systems.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="images/home_banner1.png" alt="Mohammad Tanvir Islam" class="img-fluid rounded-circle" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p>I am a software engineer with a strong focus on backend development and cross-platform mobile apps. My journey started in Dhaka, where I completed my BSc in Computer Science at American International University Bangladesh with a CGPA of 3.70/4.00. Later, I moved to Germany to pursue an MSc in Web Engineering at Technische Universität Chemnitz, where I am currently completing my thesis.</p>
+                    <p>Professionally, I have worked in multiple domains—core banking systems, mobile banking APIs, accounting and inventory platforms, and most recently, real-time sports tracking applications at Racemap GmbH. I enjoy designing clean architectures, integrating complex systems, and optimizing performance for real users. Outside of work, I stay active in tech communities through IEEE, hackathons, and student branches, where I contribute as a volunteer and organizer.</p>
+                    <h4>Quick Facts:</h4>
+                    <ul>
+                        <li><strong>Location:</strong> Chemnitz, Germany (working in Dresden)</li>
+                        <li><strong>Experience:</strong> 7+ years in software engineering (Bangladesh, Malaysia, Germany)</li>
+                        <li><strong>Current role:</strong> Software Engineer, Racemap GmbH – real-time sports tracking apps (React Native, Expo)</li>
+                        <li><strong>Interests:</strong> Real-time tracking, fintech, IoT/AI applications, developer communities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Racemap GmbH – Software Engineer (Full-time)</h4>
+                    <p class="text-muted">Dresden, Germany | Jan 2026 – Present</p>
+                    <p>At Racemap, I build and maintain real-time sports tracking applications used by event organizers and athletes worldwide.</p>
+                    <ul>
+                        <li>Develop and maintain the Racemap App, Orga App, and custom event apps for Android and iOS using React Native and Expo.</li>
+                        <li>Collaborate with designers and backend engineers to deliver smooth live-tracking experiences with frequent position updates and event data.</li>
+                        <li>Work closely with product to implement features for multi-event management, live result visualization, and user-friendly organizer workflows.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Racemap GmbH – Working Student (Werkstudent)</h4>
+                    <p class="text-muted">Dresden, Germany | May 2024 – Dec 2025</p>
+                    <ul>
+                        <li>Supported the mobile engineering team in extending and refactoring features of the Racemap ecosystem.</li>
+                        <li>Contributed to bug fixing, UI improvements, and performance optimization in React Native and Expo apps.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Fraunhofer IWU – Research Assistant (Wissenschaftliche Hilfskraft)</h4>
+                    <p class="text-muted">Chemnitz, Germany | Sep 2022 – Jan 2024</p>
+                    <ul>
+                        <li>Led the development of an application to automate the generation of configuration files for AI model training using data from smart edge devices.</li>
+                        <li>Streamlined the AI model training pipeline by automating configuration management and deployment into target environments.</li>
+                        <li>Tech stack: React JS, Python, NodeJS, GitLab, Docker.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Q3 Aurelia – Senior Software Engineer (Remote)</h4>
+                    <p class="text-muted">Selangor, Malaysia | Aug 2021 – Jun 2023</p>
+                    <ul>
+                        <li>Built a fixed asset management web application enabling efficient tracking and maintenance of assets.</li>
+                        <li>Developed accounting software to simplify financial management with accurate record-keeping and reporting.</li>
+                        <li>Implemented an integration layer to import journal entries into third-party accounting systems via external APIs.</li>
+                        <li>Designed an advanced inventory management web app for better inventory control and operational efficiency.</li>
+                        <li>Tech stack: .NET Core, ASP.NET, MS SQL, Entity Framework, GitLab; clients included EU financial solutions and stores/hotels in Asia.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Dutch Bangla Bank Limited – Software Engineer (Management Trainee Officer)</h4>
+                    <p class="text-muted">Dhaka, Bangladesh | Feb 2020 – Jul 2021</p>
+                    <ul>
+                        <li>Developed an internal document management system to support paperless approvals and process efficiency.</li>
+                        <li>Worked on the Automated Payment System (APS) to verify EFT transactions and generate submission files for the central bank of Bangladesh.</li>
+                        <li>Tech stack: ASP.NET, OracleDB, Toad, PL/SQL, BI Publisher.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Leads Corporation Limited – Software Engineer</h4>
+                    <p class="text-muted">Dhaka, Bangladesh | Jul 2018 – Feb 2020</p>
+                    <p><strong>Project: Bank Ultimus (Core Banking Solution) – General Banking Module Team Lead</strong></p>
+                    <ul>
+                        <li>Developed and enhanced modules such as CIF, Loans, Transactions, Deposits, General Banking, and Authorization.</li>
+                        <li>Worked with OracleDB, stored procedures, ASP.NET, Agile/Scrum, Oracle Linux Server, Windows Server 2016, VMware ESXi, and Microsoft DevOps.</li>
+                        <li>Client: Rajshahi Krishi Unnayan Bank.</li>
+                    </ul>
+                    <p><strong>Project: Mobile Banking Application [Backend APIs] – Project Lead</strong></p>
+                    <ul>
+                        <li>Designed secure web APIs using ASP.NET, OracleDB, MVC, and WebAPI2 to connect mobile apps and internal admin portals.</li>
+                        <li>Ensured reliable request handling and secure communication within the bank's intranet environment.</li>
+                        <li>Clients: First Security Islami Bank, Shahjalal Islami Bank, Rajshahi Krishi Unnayan Bank.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Arbree Solutions – Junior Software Engineer</h4>
+                    <p class="text-muted">Dhaka, Bangladesh | Jun 2017 – Jun 2018</p>
+                    <ul>
+                        <li>Worked on an "Online Collaboration Tool" with features like team management, file sharing, calendars, chats, project and task management, and subscription handling.</li>
+                        <li>Tech stack: .NET Core, MVC, Repository Pattern, WebAPI, Code-First, MS SQL, AngularJS, jQuery, Bootstrap, Material Design, TFS.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Education</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <h4>Technische Universität Chemnitz</h4>
+                        <p class="text-muted">MSc in Web Engineering | Oct 2022 – Present (Thesis pending)</p>
+                        <ul>
+                            <li>Grade: 2.12 (German grading system)</li>
+                            <li>Focus areas include modern web technologies, software architecture, and scalable web applications.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <h4>American International University Bangladesh (AIUB)</h4>
+                        <p class="text-muted">BSc in Computer Science | Jan 2014 – Jan 2018</p>
+                        <ul>
+                            <li>CGPA: 3.70/4.00 (equivalent to 1.7 in the German grading system)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Expert-level skills</h4>
+                    <div>
+                        <span class="skill-badge">ASP.NET</span>
+                        <span class="skill-badge">.NET Core</span>
+                        <span class="skill-badge">WebAPI2</span>
+                        <span class="skill-badge">PL/SQL</span>
+                        <span class="skill-badge">Stored Procedures</span>
+                        <span class="skill-badge">Entity Framework</span>
+                        <span class="skill-badge">OracleDB</span>
+                        <span class="skill-badge">MS SQL</span>
+                        <span class="skill-badge">React Native (Expo)</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">NodeJS</span>
+                        <span class="skill-badge">GitLab</span>
+                        <span class="skill-badge">TFS</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Intermediate-level skills</h4>
+                    <div>
+                        <span class="skill-badge">AngularJS</span>
+                        <span class="skill-badge">ReactJS</span>
+                        <span class="skill-badge">Laravel</span>
+                        <span class="skill-badge">JavaEE</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">JavaSE</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Windows Server</span>
+                        <span class="skill-badge">Oracle Linux Server</span>
+                        <span class="skill-badge">VMware ESXi</span>
+                        <span class="skill-badge">OAuth2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Highlight Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Racemap Real-Time Sports Tracking Apps</h5>
+                            <p class="card-text">At Racemap GmbH, I work on React Native apps that provide real-time GPS tracking for sports events on Android and iOS. The apps enable event organizers and spectators to follow participants, visualize positions on maps, and manage multi-event setups with live updates.</p>
+                            <p class="text-muted"><strong>Tech:</strong> React Native, Expo, REST APIs, real-time data handling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Configuration Automation App – Fraunhofer IWU</h5>
+                            <p class="card-text">I developed an application that automates configuration file generation for AI model training, using data captured from smart edge devices. The tool reduces manual effort and errors, and automates deployment of trained models into production environments.</p>
+                            <p class="text-muted"><strong>Tech:</strong> React JS, Python, NodeJS, Docker, GitLab.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Multi-Client Accounting & Inventory Platform – Q3 Aurelia</h5>
+                            <p class="card-text">I built web applications for fixed asset management, accounting, API-based journal import, and advanced inventory management serving EU and Asian clients.</p>
+                            <p class="text-muted"><strong>Tech:</strong> .NET Core, ASP.NET, MS SQL, Entity Framework, REST APIs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Core Banking & Mobile Banking APIs – Leads Corporation</h5>
+                            <p class="card-text">I contributed to a core banking solution and led backend API development for mobile banking applications for multiple banks. The systems handled customer data, transactions, deposits, loans, and secure mobile interactions.</p>
+                            <p class="text-muted"><strong>Tech:</strong> ASP.NET, WebAPI2, OracleDB, PL/SQL, MVC, MS DevOps/TFS.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Online Collaboration Platform – Arbree Solutions</h5>
+                            <p class="card-text">I worked on a full-featured collaboration platform with team spaces, file sharing, calendars, project and task management, and subscriptions.</p>
+                            <p class="text-muted"><strong>Tech:</strong> .NET Core, MVC, MS SQL, AngularJS, Bootstrap, WebAPI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Awards & Recognition</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                        <h5>1st Place – IEEE Hackathon 2025 (Germany Section)</h5>
+                        <p>Developed an AI-powered automated plant care system combining hardware and AI for monitoring, disease detection, and automated care.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                        <h5>1st Place – IEEE Hackathon 2022 (Germany Section)</h5>
+                        <p>Built a self-driving car project demonstrating advanced control and perception capabilities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-award fa-3x text-success mb-3"></i>
+                        <h5>Champion of the Quarter (Q4 2018) – Leads Corporation Limited</h5>
+                        <p>Recognized for successful delivery and performance on mobile banking applications for multiple banks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Community & Leadership</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-users text-primary me-2"></i>Secretary, IEEE Young Professionals Germany Section (Jan 2025 – Dec 2026)</li>
+                        <li><i class="fas fa-users text-primary me-2"></i>Vice Chairperson, IEEE TU Chemnitz Student Branch (Jul 2023 – Dec 2026)</li>
+                        <li><i class="fas fa-globe text-primary me-2"></i>Webmaster, IEEE TU Chemnitz Student Branch (Oct 2022 – Jun 2023)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-handshake text-primary me-2"></i>Volunteer, Droidcon Dhaka 2017</li>
+                        <li><i class="fas fa-users text-primary me-2"></i>Volunteer, AIUB Computer Club (2015 – Dec 2017)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Languages</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <h4>English</h4>
+                        <p>C1</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <h4>German</h4>
+                        <p>A2 (B1 in progress)</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <h4>Bangla</h4>
+                        <p>Native</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="contact-info text-center">
+                        <p><i class="fas fa-envelope me-2"></i>Email: <a href="mailto:tanvirislam@ieee.org" class="text-decoration-none">tanvirislam@ieee.org</a></p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Location: Chemnitz, Germany</p>
+                        <p><i class="fab fa-linkedin me-2"></i>LinkedIn: <a href="https://linkedin.com/in/tanvieer" target="_blank" class="text-decoration-none">linkedin.com/in/tanvieer</a></p>
+                        <p class="mt-3">I am open to opportunities in backend, mobile, and real-time systems engineering in Germany and across Europe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2026 Mohammad Tanvir Islam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/index-DHekLx0y.js"></script>
+</body>
 </html>
