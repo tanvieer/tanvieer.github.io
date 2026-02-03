@@ -328,6 +328,362 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
+
+        /* Improved Hero Section */
+        .hero {
+            background: var(--hero-bg);
+            color: white;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: rgba(255,255,255,0.05);
+            transform: rotate(15deg);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero .lead {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .hero .profile-img {
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .hero .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Improved Section Headers */
+        .section h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--hero-bg);
+            border-radius: 2px;
+        }
+
+        /* Improved About Section */
+        .about-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .quick-facts {
+            background: var(--section-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .quick-facts h4 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .quick-facts li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .quick-facts li:last-child {
+            border-bottom: none;
+        }
+
+        /* Improved Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-color), transparent);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            background: var(--card-bg);
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: var(--hero-bg);
+            border-radius: 50%;
+            border: 3px solid var(--bg-color);
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+
+        .timeline-item h4 {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item .text-muted {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--section-bg);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Improved Education Cards */
+        .education-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 4px 15px var(--shadow);
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card .icon {
+            width: 60px;
+            height: 60px;
+            background: var(--hero-bg);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .education-card h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Improved Skills Section */
+        .skills-category {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .skills-category h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .skills-category h4 i {
+            color: var(--accent-color);
+        }
+
+        .skill-badge {
+            background: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 8px 18px;
+            margin: 5px;
+            display: inline-block;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-badge:hover {
+            background: var(--hero-bg);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* Improved Project Cards */
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px var(--shadow);
+        }
+
+        .project-card .card-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card .card-text {
+            flex-grow: 1;
+        }
+
+        .project-card .tech-stack {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .project-card .btn {
+            background: var(--hero-bg);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Award Cards */
+        .award-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .award-card img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .award-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .award-card .card-body {
+            padding: 20px;
+        }
+
+        .award-card h5 {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Certificate Cards */
+        .cert-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* Footer improvements */
+        .footer {
+            background-color: var(--navbar-bg);
+            color: rgba(255,255,255,0.8);
+            padding: 30px 0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -365,12 +721,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h1>Software Engineer – Web, Mobile & Real-Time Systems</h1>
-                    <p class="lead">Building reliable backends and real-time sports tracking apps in Germany.</p>
-                    <p>I am Mohammad Tanvir Islam, a software engineer based in Chemnitz, Germany, currently working at Racemap GmbH in Dresden. With over seven years of experience across banking, fintech, SaaS, and sports tech, I specialize in .NET backends and React Native mobile applications. I enjoy turning complex business requirements into robust, scalable software systems.</p>
+                    <h1>Software Engineer</h1>
+                    <p class="lead">Web, Mobile & Real-Time Systems</p>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Building reliable backends and real-time sports tracking apps in Germany. With over seven years of experience across banking, fintech, SaaS, and sports tech, I specialize in .NET backends and React Native mobile applications.</p>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-light btn-lg me-3" style="border-radius: 25px; padding: 12px 30px; font-weight: 600;"><i class="fas fa-paper-plane me-2"></i>Get In Touch</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg" style="border-radius: 25px; padding: 12px 30px;"><i class="fas fa-code me-2"></i>View Projects</a>
+                    </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/profile.png" alt="Mohammad Tanvir Islam" class="img-fluid rounded-circle" style="max-width: 300px;">
+                <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                    <img src="images/profile.png" alt="Mohammad Tanvir Islam" class="img-fluid rounded-circle profile-img" style="max-width: 280px;">
                 </div>
             </div>
         </div>
@@ -379,18 +739,24 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">About Me</h2>
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <p>I am a software engineer with a strong focus on backend development and cross-platform mobile apps. My journey started in Dhaka, where I completed my BSc in Computer Science at American International University Bangladesh with a CGPA of 3.70/4.00. Later, I moved to Germany to pursue an MSc in Web Engineering at Technische Universität Chemnitz, where I am currently completing my thesis.</p>
-                    <p>Professionally, I have worked in multiple domains—core banking systems, mobile banking APIs, accounting and inventory platforms, and most recently, real-time sports tracking applications at Racemap GmbH. I enjoy designing clean architectures, integrating complex systems, and optimizing performance for real users. Outside of work, I stay active in tech communities through IEEE, hackathons, and student branches, where I contribute as a volunteer and organizer.</p>
-                    <h4>Quick Facts:</h4>
-                    <ul>
-                        <li><strong>Location:</strong> Chemnitz, Germany (working in Dresden)</li>
-                        <li><strong>Experience:</strong> 7+ years in software engineering (Bangladesh, Malaysia, Germany)</li>
-                        <li><strong>Current role:</strong> Software Engineer, Racemap GmbH – real-time sports tracking apps (React Native, Expo)</li>
-                        <li><strong>Interests:</strong> Real-time tracking, fintech, IoT/AI applications, developer communities</li>
-                    </ul>
+                <div class="col-lg-10 mx-auto">
+                    <div class="about-content">
+                        <p>I am a software engineer with a strong focus on backend development and cross-platform mobile apps. My journey started in Dhaka, where I completed my BSc in Computer Science at American International University Bangladesh with a CGPA of 3.70/4.00. Later, I moved to Germany to pursue an MSc in Web Engineering at Technische Universität Chemnitz, where I am currently completing my thesis.</p>
+                        <p>Professionally, I have worked in multiple domains—core banking systems, mobile banking APIs, accounting and inventory platforms, and most recently, real-time sports tracking applications at Racemap GmbH. I enjoy designing clean architectures, integrating complex systems, and optimizing performance for real users. Outside of work, I stay active in tech communities through IEEE, hackathons, and student branches, where I contribute as a volunteer and organizer.</p>
+                        <div class="quick-facts">
+                            <h4><i class="fas fa-bolt me-2"></i>Quick Facts</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="fas fa-map-marker-alt me-2" style="color: var(--accent-color);"></i><strong>Location:</strong> Chemnitz, Germany (working in Dresden)</li>
+                                <li><i class="fas fa-briefcase me-2" style="color: var(--accent-color);"></i><strong>Experience:</strong> 7+ years in software engineering (Bangladesh, Malaysia, Germany)</li>
+                                <li><i class="fas fa-building me-2" style="color: var(--accent-color);"></i><strong>Current role:</strong> Software Engineer, Racemap GmbH – real-time sports tracking apps (React Native, Expo)</li>
+                                <li><i class="fas fa-heart me-2" style="color: var(--accent-color);"></i><strong>Interests:</strong> Real-time tracking, fintech, IoT/AI applications, developer communities</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -399,7 +765,9 @@
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Experience</h2>
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <h4>Racemap GmbH – Software Engineer (Full-time)</h4>
@@ -479,24 +847,36 @@
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Education</h2>
-            <div class="row">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card p-4">
+                    <div class="education-card">
+                        <div class="icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                         <h4>Technische Universität Chemnitz</h4>
-                        <p class="text-muted">MSc in Web Engineering | Oct 2022 – Present (Thesis pending)</p>
-                        <ul>
-                            <li>Grade: 2.12 (German grading system)</li>
-                            <li>Focus areas include modern web technologies, software architecture, and scalable web applications.</li>
+                        <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Oct 2022 – Present</p>
+                        <p style="color: var(--accent-color); font-weight: 600;">MSc in Web Engineering</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Grade: 2.12 (German grading system)</li>
+                            <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Focus: Modern web technologies, software architecture, scalable web applications</li>
+                            <li><i class="fas fa-spinner me-2" style="color: var(--accent-color);"></i>Thesis pending</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card p-4">
-                        <h4>American International University Bangladesh (AIUB)</h4>
-                        <p class="text-muted">BSc in Computer Science | Jan 2014 – Jan 2018</p>
-                        <ul>
-                            <li>CGPA: 3.70/4.00 (equivalent to 1.7 in the German grading system)</li>
+                    <div class="education-card">
+                        <div class="icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>American International University Bangladesh</h4>
+                        <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Jan 2014 – Jan 2018</p>
+                        <p style="color: var(--accent-color); font-weight: 600;">BSc in Computer Science</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>CGPA: 3.70/4.00</li>
+                            <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Equivalent to 1.7 in German grading system</li>
                         </ul>
                     </div>
                 </div>
@@ -507,29 +887,34 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Skills</h2>
-            <div class="row">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="row g-4">
                 <div class="col-md-6">
-                    <h4>Expert-level skills</h4>
-                    <div>
-                        <span class="skill-badge">React Native (Expo)</span>
-                        <span class="skill-badge">ASP.NET</span>
-                        <span class="skill-badge">.NET Core</span>
-                        <span class="skill-badge">WebAPI2</span>
-                        <span class="skill-badge">PL/SQL</span>
-                        <span class="skill-badge">Stored Procedures</span>
-                        <span class="skill-badge">Entity Framework</span>
-                        <span class="skill-badge">OracleDB</span>
-                        <span class="skill-badge">MS SQL</span>
-                        <span class="skill-badge">Docker</span>
-                        <span class="skill-badge">NodeJS</span>
-                        <span class="skill-badge">GitLab</span>
-                        <span class="skill-badge">TFS</span>
+                    <div class="skills-category">
+                        <h4><i class="fas fa-star"></i>Expert-level Skills</h4>
+                        <div>
+                            <span class="skill-badge">React Native (Expo)</span>
+                            <span class="skill-badge">ASP.NET</span>
+                            <span class="skill-badge">.NET Core</span>
+                            <span class="skill-badge">WebAPI2</span>
+                            <span class="skill-badge">PL/SQL</span>
+                            <span class="skill-badge">Stored Procedures</span>
+                            <span class="skill-badge">Entity Framework</span>
+                            <span class="skill-badge">OracleDB</span>
+                            <span class="skill-badge">MS SQL</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">NodeJS</span>
+                            <span class="skill-badge">GitLab</span>
+                            <span class="skill-badge">TFS</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h4>Intermediate-level skills</h4>
-                    <div>
+                    <div class="skills-category">
+                        <h4><i class="fas fa-code"></i>Intermediate-level Skills</h4>
+                        <div>
                         <span class="skill-badge">AngularJS</span>
                         <span class="skill-badge">ReactJS</span>
                         <span class="skill-badge">Laravel</span>
@@ -543,6 +928,7 @@
                         <span class="skill-badge">Oracle Linux Server</span>
                         <span class="skill-badge">VMware ESXi</span>
                         <span class="skill-badge">OAuth2</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -552,53 +938,65 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Highlight Projects</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+            <div class="section-header">
+                <h2>Highlight Projects</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Racemap Real-Time Sports Tracking Apps</h5>
+                            <h5 class="card-title"><i class="fas fa-running me-2" style="color: var(--accent-color);"></i>Racemap Real-Time Sports Tracking Apps</h5>
                             <p class="card-text">At Racemap GmbH, I work on React Native apps that provide real-time GPS tracking for sports events on Android and iOS. The apps enable event organizers and spectators to follow participants, visualize positions on maps, and manage multi-event setups with live updates.</p>
-                            <p class="text-muted"><strong>Tech:</strong> React Native, Expo, REST APIs, real-time data handling.</p>
+                            <div class="tech-stack">
+                                <i class="fas fa-tools me-2" style="color: var(--accent-color);"></i><strong>Tech:</strong> React Native, Expo, REST APIs, real-time data handling
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-4">
+                    <div class="project-card">
                         <div class="card-body">
-                            <h5 class="card-title">AI Configuration Automation App – Fraunhofer IWU</h5>
+                            <h5 class="card-title"><i class="fas fa-robot me-2" style="color: var(--accent-color);"></i>AI Configuration Automation App</h5>
                             <p class="card-text">I developed an application that automates configuration file generation for AI model training, using data captured from smart edge devices. The tool reduces manual effort and errors, and automates deployment of trained models into production environments.</p>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-ai">More Details</button>
-                            <p class="text-muted mt-2"><strong>Tech:</strong> React JS, Python, NodeJS, Docker, GitLab.</p>
+                            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-ai"><i class="fas fa-expand-alt me-2"></i>More Details</button>
+                            <div class="tech-stack">
+                                <i class="fas fa-tools me-2" style="color: var(--accent-color);"></i><strong>Tech:</strong> React JS, Python, NodeJS, Docker, GitLab
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-4">
+                    <div class="project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Fixed Asset Management System – Q3 Aurelia</h5>
+                            <h5 class="card-title"><i class="fas fa-building me-2" style="color: var(--accent-color);"></i>Fixed Asset Management System</h5>
                             <p class="card-text">I built web applications for fixed asset management, accounting, API-based journal import, and advanced inventory management serving EU and Asian clients.</p>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-fixed">More Details</button>
-                            <p class="text-muted mt-2"><strong>Tech:</strong> .NET Core, ASP.NET, MS SQL, Entity Framework, REST APIs.</p>
+                            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-fixed"><i class="fas fa-expand-alt me-2"></i>More Details</button>
+                            <div class="tech-stack">
+                                <i class="fas fa-tools me-2" style="color: var(--accent-color);"></i><strong>Tech:</strong> .NET Core, ASP.NET, MS SQL, Entity Framework
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-4">
+                    <div class="project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Core Banking & Mobile Banking APIs – Leads Corporation</h5>
+                            <h5 class="card-title"><i class="fas fa-university me-2" style="color: var(--accent-color);"></i>Core Banking & Mobile Banking APIs</h5>
                             <p class="card-text">I contributed to a core banking solution and led backend API development for mobile banking applications for multiple banks. The systems handled customer data, transactions, deposits, loans, and secure mobile interactions.</p>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-banking">More Details</button>
-                            <p class="text-muted mt-2"><strong>Tech:</strong> ASP.NET, WebAPI2, OracleDB, PL/SQL, MVC, MS DevOps/TFS.</p>
+                            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-banking"><i class="fas fa-expand-alt me-2"></i>More Details</button>
+                            <div class="tech-stack">
+                                <i class="fas fa-tools me-2" style="color: var(--accent-color);"></i><strong>Tech:</strong> ASP.NET, WebAPI2, OracleDB, PL/SQL
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-4">
+                    <div class="project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Online Collaboration Platform – Arbree Solutions</h5>
+                            <h5 class="card-title"><i class="fas fa-users me-2" style="color: var(--accent-color);"></i>Online Collaboration Platform</h5>
                             <p class="card-text">I worked on a full-featured collaboration platform with team spaces, file sharing, calendars, project and task management, and subscriptions.</p>
-                            <p class="text-muted"><strong>Tech:</strong> .NET Core, MVC, MS SQL, AngularJS, Bootstrap, WebAPI.</p>
+                            <div class="tech-stack">
+                                <i class="fas fa-tools me-2" style="color: var(--accent-color);"></i><strong>Tech:</strong> .NET Core, MVC, MS SQL, AngularJS, Bootstrap
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -609,33 +1007,27 @@
     <!-- Hobby Projects Section -->
     <section id="hobbyprojects" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Personal Projects</h2>
-            <div class="row">
+            <div class="section-header">
+                <h2>Personal Projects</h2>
+            </div>
+            <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="card">
-                        <img src="images/planteen app.png" class="card-img-top" alt="Planteen App Screenshot" data-bs-toggle="modal" data-bs-target="#modal-planteen" style="cursor: pointer;">
+                    <div class="project-card" style="overflow: hidden;">
+                        <img src="images/planteen app.png" class="card-img-top" alt="Planteen App Screenshot" data-bs-toggle="modal" data-bs-target="#modal-planteen" style="cursor: pointer; height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Planteen - AI-Powered Plant Care System</h5>
-                            <p class="card-text">Recently, I developed an AI-powered plant care system that combines image recognition, IoT sensors, and data analytics to monitor plant health in real time. The system continuously tracks parameters such as soil moisture, temperature, humidity, and light intensity using connected sensors, while a camera module captures plant images for visual health assessment. A trained machine learning model analyzes the images to detect early signs of disease or stress and correlates them with sensor readings for more accurate diagnostics.</p>
-                            <p class="card-text">On top of the monitoring layer, I implemented an automation pipeline that can trigger actions like starting irrigation, adjusting care routines, or sending alerts and recommendations to the user. A web or mobile dashboard presents live sensor data, historical trends, and AI-detected issues in a clear and user-friendly way. This project showcases my ability to integrate computer vision, embedded/IoT systems, and backend services into a cohesive, intelligent solution for real-world use.</p>
+                            <h5 class="card-title"><i class="fas fa-leaf me-2" style="color: var(--accent-color);"></i>Planteen - AI-Powered Plant Care System</h5>
+                            <p class="card-text">An AI-powered plant care system that combines image recognition, IoT sensors, and data analytics to monitor plant health in real time. Features automated irrigation, health alerts, and a live dashboard.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-planteen"><i class="fas fa-expand-alt me-2"></i>View Details</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
-                        <img src="images/Personal Projects/EGS banner.png" class="card-img-top" alt="Esho German Shikhi Banner" data-bs-toggle="modal" data-bs-target="#modal-egs" style="cursor: pointer;">
+                    <div class="project-card" style="overflow: hidden;">
+                        <img src="images/Personal Projects/EGS banner.png" class="card-img-top" alt="Esho German Shikhi Banner" data-bs-toggle="modal" data-bs-target="#modal-egs" style="cursor: pointer; height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Esho German Shikhi</h5>
-                            <p class="card-text">Esho German Shiki is a smart and intuitive platform designed for students and teachers to easily share and manage class records. With this app, users can upload notes, assignments, attendance records, and other important class materials in a secure and organized way. Students can access resources anytime, stay up-to-date with class activities, and collaborate efficiently with peers. Teachers can streamline communication, track student progress, and ensure important information reaches everyone instantly.</p>
-                            <p class="card-text"><strong>Key Features:</strong></p>
-                            <ul>
-                                <li>Upload and share class notes, assignments, and resources.</li>
-                                <li>Access class records anytime, anywhere.</li>
-                                <li>Secure and organized storage of all class materials.</li>
-                                <li>Real-time updates and notifications for new uploads.</li>
-                                <li>Easy collaboration between students and teachers.</li>
-                            </ul>
-                            <p class="card-text">Esho German Shiki makes classroom management simpler, smarter, and more connected.</p>
+                            <h5 class="card-title"><i class="fas fa-book me-2" style="color: var(--accent-color);"></i>Esho German Shikhi</h5>
+                            <p class="card-text">A smart platform for students and teachers to share class records, notes, assignments, and collaborate efficiently. Features real-time updates and secure storage.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-egs"><i class="fas fa-expand-alt me-2"></i>View Details</button>
                         </div>
                     </div>
                 </div>
@@ -646,47 +1038,54 @@
     <!-- Awards Section -->
     <section id="awards" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Awards & Recognition</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+            <div class="section-header">
+                <h2>Awards & Recognition</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="award-card">
                         <img src="images/awards/IEEE Hackathon 1st place 2022.jpg" class="card-img-top" alt="1st Place IEEE Hackathon 2022" data-bs-toggle="modal" data-bs-target="#modal-awards1" style="cursor: pointer;">
                         <div class="card-body text-center">
-                            <h5>1st Place – IEEE Hackathon 2022 (Germany Section)</h5>
-                            <p>Built a self-driving car project demonstrating advanced control and perception capabilities.</p>
+                            <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; padding: 3px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;"><i class="fas fa-trophy me-1"></i>1st Place</span>
+                            <h5 class="mt-3">IEEE Hackathon 2022 (Germany Section)</h5>
+                            <p style="font-size: 0.9rem;">Built a self-driving car project demonstrating advanced control and perception capabilities.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="award-card">
                         <img src="images/awards/hackathon-tuc-SB-2023.png" class="card-img-top" alt="2nd Place IEEE TU Chemnitz SB Hackathon 2023" data-bs-toggle="modal" data-bs-target="#modal-awards2" style="cursor: pointer;">
                         <div class="card-body text-center">
-                            <h5>2nd Place – IEEE TU Chemnitz SB Hackathon 2023</h5>
+                            <span style="background: linear-gradient(135deg, #C0C0C0, #A8A8A8); color: #000; padding: 3px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;"><i class="fas fa-medal me-1"></i>2nd Place</span>
+                            <h5 class="mt-3">IEEE TU Chemnitz SB Hackathon 2023</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="award-card">
                         <img src="images/awards/Achievement-LEADS-Champion-of-the-quarter-Q4-2018_page-0001.jpg" class="card-img-top" alt="Champion of the Quarter Q4 2018" data-bs-toggle="modal" data-bs-target="#modal-awards3" style="cursor: pointer;">
                         <div class="card-body text-center">
-                            <h5>Champion of the Quarter (Q4 2018) – Leads Corporation Limited</h5>
-                            <p>Recognized for successful delivery and performance on mobile banking applications for multiple banks.</p>
+                            <span style="background: var(--hero-bg); color: white; padding: 3px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;"><i class="fas fa-award me-1"></i>Champion</span>
+                            <h5 class="mt-3">Champion of the Quarter (Q4 2018)</h5>
+                            <p style="font-size: 0.9rem;">Leads Corporation Limited – Recognized for mobile banking applications delivery.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="award-card">
                         <img src="images/awards/IEEE WESYP 2025 Hamburg.jpg" class="card-img-top" alt="IEEE WESYP 2025 Hamburg" data-bs-toggle="modal" data-bs-target="#modal-awards4" style="cursor: pointer;">
                         <div class="card-body text-center">
-                            <h5>IEEE WESYP 2025 Hamburg</h5>
+                            <span style="background: var(--hero-bg); color: white; padding: 3px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;"><i class="fas fa-star me-1"></i>Event</span>
+                            <h5 class="mt-3">IEEE WESYP 2025 Hamburg</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="award-card">
                         <img src="images/awards/ieee day ambassador 2023.jpg" class="card-img-top" alt="IEEE Day Ambassador 2023" data-bs-toggle="modal" data-bs-target="#modal-awards5" style="cursor: pointer;">
                         <div class="card-body text-center">
-                            <h5>IEEE Day Ambassador 2023</h5>
+                            <span style="background: var(--hero-bg); color: white; padding: 3px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;"><i class="fas fa-certificate me-1"></i>Ambassador</span>
+                            <h5 class="mt-3">IEEE Day Ambassador 2023</h5>
                         </div>
                     </div>
                 </div>
@@ -697,53 +1096,55 @@
     <!-- Course Certificates Section -->
     <section id="coursecertificates" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Course Certificates</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+            <div class="section-header">
+                <h2>Course Certificates</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="cert-card">
                         <img src="images/CourseCertificates/CertificateOfCompletion_Advanced-ASP.NET-Web-API-2.2_page-0001.jpg" class="card-img-top" alt="Advanced ASP.NET Web API 2.2 Certificate" data-bs-toggle="modal" data-bs-target="#modal1" style="cursor: pointer;">
                         <div class="card-body">
-                            <h5 class="card-title">Advanced ASP.NET Web API 2.2</h5>
+                            <h5 class="card-title" style="font-size: 0.95rem;"><i class="fas fa-certificate me-2" style="color: var(--accent-color);"></i>Advanced ASP.NET Web API 2.2</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="cert-card">
                         <img src="images/CourseCertificates/CertificateOfCompletion_Node.js-Essential-Training_page-0001.jpg" class="card-img-top" alt="Node.js Essential Training Certificate" data-bs-toggle="modal" data-bs-target="#modal2" style="cursor: pointer;">
                         <div class="card-body">
-                            <h5 class="card-title">Node.js Essential Training</h5>
+                            <h5 class="card-title" style="font-size: 0.95rem;"><i class="fas fa-certificate me-2" style="color: var(--accent-color);"></i>Node.js Essential Training</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="cert-card">
                         <img src="images/CourseCertificates/Coursera-Understanding-and-Visualizing-Data-with-Python_page-0001.jpg" class="card-img-top" alt="Understanding and Visualizing Data with Python Certificate" data-bs-toggle="modal" data-bs-target="#modal3" style="cursor: pointer;">
                         <div class="card-body">
-                            <h5 class="card-title">Understanding and Visualizing Data with Python</h5>
+                            <h5 class="card-title" style="font-size: 0.95rem;"><i class="fas fa-certificate me-2" style="color: var(--accent-color);"></i>Data Visualization with Python</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="cert-card">
                         <img src="images/CourseCertificates/Coursera-Introduction-to-Software-Testing_page-0001.jpg" class="card-img-top" alt="Introduction to Software Testing Certificate" data-bs-toggle="modal" data-bs-target="#modal4" style="cursor: pointer;">
                         <div class="card-body">
-                            <h5 class="card-title">Introduction to Software Testing</h5>
+                            <h5 class="card-title" style="font-size: 0.95rem;"><i class="fas fa-certificate me-2" style="color: var(--accent-color);"></i>Introduction to Software Testing</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="cert-card">
                         <img src="images/CourseCertificates/CertificateOfCompletion_MySQL-Advanced-Topics_page-0001.jpg" class="card-img-top" alt="MySQL Advanced Topics Certificate" data-bs-toggle="modal" data-bs-target="#modal5" style="cursor: pointer;">
                         <div class="card-body">
-                            <h5 class="card-title">MySQL Advanced Topics</h5>
+                            <h5 class="card-title" style="font-size: 0.95rem;"><i class="fas fa-certificate me-2" style="color: var(--accent-color);"></i>MySQL Advanced Topics</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="cert-card">
                         <img src="images/CourseCertificates/CertificateOfCompletion_Ethical-Hacking-with-JavaScript_page-0001.jpg" class="card-img-top" alt="Ethical Hacking with JavaScript Certificate" data-bs-toggle="modal" data-bs-target="#modal6" style="cursor: pointer;">
                         <div class="card-body">
-                            <h5 class="card-title">Ethical Hacking with JavaScript</h5>
+                            <h5 class="card-title" style="font-size: 0.95rem;"><i class="fas fa-certificate me-2" style="color: var(--accent-color);"></i>Ethical Hacking with JavaScript</h5>
                         </div>
                     </div>
                 </div>
@@ -754,37 +1155,39 @@
     <!-- Volunteer Section -->
     <section id="volunteer" class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Volunteer Activities</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+            <div class="section-header">
+                <h2>Volunteer Activities</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="cert-card">
                         <img src="images/awards/Achievement-Volunteer-Cs-Fest-2015-AIUB.jpg" class="card-img-top" alt="Volunteer Cs Fest 2015 AIUB" data-bs-toggle="modal" data-bs-target="#modal-vol1" style="cursor: pointer;">
-                        <div class="card-body">
-                            <h5 class="card-title">Volunteer Cs Fest 2015 AIUB</h5>
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-size: 0.9rem;">CS Fest 2015 AIUB</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-3">
+                    <div class="cert-card">
                         <img src="images/awards/Achievement-ICT-Fest-IUT.jpg" class="card-img-top" alt="ICT Fest IUT" data-bs-toggle="modal" data-bs-target="#modal-vol2" style="cursor: pointer;">
-                        <div class="card-body">
-                            <h5 class="card-title">ICT Fest IUT</h5>
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-size: 0.9rem;">ICT Fest IUT</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-3">
+                    <div class="cert-card">
                         <img src="images/awards/ACC CS FEST 2016.jpg" class="card-img-top" alt="ACC CS FEST 2016" data-bs-toggle="modal" data-bs-target="#modal-vol3" style="cursor: pointer;">
-                        <div class="card-body">
-                            <h5 class="card-title">ACC CS FEST 2016</h5>
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-size: 0.9rem;">ACC CS FEST 2016</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-3">
+                    <div class="cert-card">
                         <img src="images/awards/Achievement-ACC-Final 2018.jpg" class="card-img-top" alt="Achievement ACC Final 2018" data-bs-toggle="modal" data-bs-target="#modal-vol4" style="cursor: pointer;">
-                        <div class="card-body">
-                            <h5 class="card-title">Achievement ACC Final 2018</h5>
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-size: 0.9rem;">ACC Final 2018</h5>
                         </div>
                     </div>
                 </div>
