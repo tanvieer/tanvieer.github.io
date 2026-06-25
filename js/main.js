@@ -2,6 +2,26 @@
    Portfolio JavaScript - Mohammad Tanvir Islam
    ============================================ */
 
+// ==========================================
+// PWA – Service Worker Registration
+// ==========================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
+
+// ==========================================
+// Splash Screen (mobile only)
+// ==========================================
+(function () {
+    const splash = document.getElementById('splash-screen');
+    if (!splash) return;
+    window.addEventListener('load', () => {
+        setTimeout(() => splash.classList.add('hidden'), 1400);
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // ==========================================
@@ -254,20 +274,40 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
     // ==========================================
-    // Active Nav Link on Scroll
+    // Active Nav Link on Scroll (desktop + mobile bottom nav)
     // ==========================================
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks  = document.querySelectorAll('.nav-link[href^="#"]');
+    const sections    = document.querySelectorAll('section[id]');
+    const navLinks    = document.querySelectorAll('.nav-link[href^="#"]');
+    const mobileItems = document.querySelectorAll('.mobile-nav-item');
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                const id = entry.target.id;
+
+                // Desktop nav
                 navLinks.forEach(link => link.classList.remove('active'));
-                const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-                if (activeLink) activeLink.classList.add('active');
+                const activeDesktop = document.querySelector(`.nav-link[href="#${id}"]`);
+                if (activeDesktop) activeDesktop.classList.add('active');
+
+                // Mobile bottom nav
+                mobileItems.forEach(item => item.classList.remove('active'));
+                const activeMobile = document.querySelector(`.mobile-nav-item[data-section="${id}"]`);
+                if (activeMobile) activeMobile.classList.add('active');
             }
         });
-    }, { threshold: 0.35 });
+    }, { threshold: 0.3 });
 
     sections.forEach(sec => sectionObserver.observe(sec));
+
+    // ==========================================
+    // Mobile Bottom Nav – smooth scroll
+    // ==========================================
+    mobileItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(item.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 });

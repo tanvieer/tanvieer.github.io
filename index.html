@@ -36,6 +36,14 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#0f1419">
     <meta name="msapplication-TileColor" content="#0f1419">
+
+    <!-- PWA / Mobile App -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tanvir">
+    <link rel="apple-touch-icon" href="images/profile.png">
     
     <!-- Additional SEO -->
     <meta name="geo.region" content="DE-SN">
@@ -157,6 +165,13 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Splash Screen (mobile only) -->
+    <div id="splash-screen">
+        <div class="splash-logo">TI</div>
+        <p class="splash-name">Mohammad Tanvir Islam</p>
+        <p class="splash-role">Software Engineer</p>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -172,9 +187,9 @@
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#hobbyprojects">Personal Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobbyprojects">Personal</a></li>
                     <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#coursecertificates">Course Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#coursecertificates">Certificates</a></li>
                     <li class="nav-item"><a class="nav-link" href="#volunteer">Volunteer</a></li>
                     <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -1389,6 +1404,25 @@
             <p>&copy; 2026 Mohammad Tanvir Islam. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" id="mobileBottomNav">
+        <a href="#hero"       class="mobile-nav-item" data-section="hero">
+            <i class="fas fa-house"></i><span>Home</span>
+        </a>
+        <a href="#about"      class="mobile-nav-item" data-section="about">
+            <i class="fas fa-user"></i><span>About</span>
+        </a>
+        <a href="#experience" class="mobile-nav-item" data-section="experience">
+            <i class="fas fa-briefcase"></i><span>Work</span>
+        </a>
+        <a href="#projects"   class="mobile-nav-item" data-section="projects">
+            <i class="fas fa-code"></i><span>Projects</span>
+        </a>
+        <a href="#contact"    class="mobile-nav-item" data-section="contact">
+            <i class="fas fa-envelope"></i><span>Contact</span>
+        </a>
+    </nav>
 
     <!-- Lightbox Overlay -->
     <div class="lightbox-overlay" id="lightbox">
