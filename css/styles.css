@@ -1118,11 +1118,104 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
 /* ==========================================
    Responsive Tweaks
    ========================================== */
+
+/* Tablets and large phones (≤ 768px) */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.6rem; }
-    .hero { padding: 120px 0 80px; min-height: unset; }
+    .hero {
+        padding: 110px 0 70px;
+        min-height: unset;
+        text-align: center;
+    }
+
+    .hero h1 { font-size: 2.4rem; }
+
+    .hero .lead { font-size: 1.2rem; }
+
+    .hero .profile-img { max-width: 200px; margin-top: 2rem; }
+
+    .hero .mt-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero .btn-light,
+    .hero .btn-outline-light {
+        margin: 0 !important;
+    }
+
+    .section { padding: 60px 0; }
+
+    .section-header { margin-bottom: 40px; }
     .section-header h2 { font-size: 2rem; }
-    .about-content { padding: 28px; }
-    .timeline { padding-left: 28px; }
+
+    .section > .container > h2.text-center { font-size: 2rem; }
+
+    .about-content { padding: 24px; }
+
+    .timeline { padding-left: 30px; }
+
+    .timeline-item { padding: 20px 18px; }
+
+    /* Keep dot visible within the reduced padding */
+    .timeline-item::before {
+        left: -27px;
+        width: 12px;
+        height: 12px;
+    }
+
     .contact-card { padding: 24px; }
+
+    .contact-item { flex-wrap: wrap; }
+
+    .education-card { padding: 22px; }
+
+    .skills-category { padding: 22px; }
+
+    .community-card { padding: 18px; }
+
+    .language-card { padding: 22px 16px; }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.9rem; }
+
+    .hero .lead { font-size: 1.05rem; }
+
+    .hero { padding: 100px 0 60px; }
+
+    .navbar .navbar-brand { font-size: 1.05rem; }
+
+    .section-header h2 { font-size: 1.75rem; }
+
+    .section > .container > h2.text-center { font-size: 1.75rem; }
+
+    .about-content { padding: 18px; }
+
+    .timeline { padding-left: 24px; }
+
+    .timeline-item {
+        padding: 16px 14px;
+    }
+
+    .timeline-item::before {
+        left: -22px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline::before { left: 11px; }
+
+    .quick-facts { padding: 16px; }
+
+    .contact-card { padding: 18px; }
+
+    .contact-item { padding: 12px; }
+
+    .lightbox-overlay img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
 }
