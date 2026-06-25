@@ -1135,7 +1135,7 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
 /* Tablets and large phones (≤ 768px) */
 @media (max-width: 768px) {
     .hero {
-        padding: 110px 0 70px;
+        padding: 130px 0 70px;
         min-height: unset;
         text-align: center;
     }
@@ -1197,7 +1197,7 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
 
     .hero .lead { font-size: 1.05rem; }
 
-    .hero { padding: 100px 0 60px; }
+    .hero { padding: 120px 0 60px; }
 
     .navbar .navbar-brand { font-size: 1.05rem; }
 

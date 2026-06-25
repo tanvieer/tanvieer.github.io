@@ -88,13 +88,14 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.registerPlugin(ScrollTrigger);
 
         // — Hero entrance —
+        const isMobile = window.innerWidth <= 768;
         const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
         heroTl
-            .from('.hero h1',        { duration: 1,   y: 70, opacity: 0, delay: 0.2 })
-            .from('.hero .lead',     { duration: 0.9, y: 50, opacity: 0 }, '-=0.6')
-            .from('.hero p:not(.lead)', { duration: 0.9, y: 40, opacity: 0 }, '-=0.6')
-            .from('.hero .mt-4',     { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
-            .from('.profile-img',    { duration: 1.2, scale: 0.75, opacity: 0, ease: 'back.out(1.7)' }, '-=1');
+            .from('.hero h1',           { duration: 1,   y: isMobile ? 30 : 70, opacity: 0, delay: 0.15 })
+            .from('.hero .lead',        { duration: 0.9, y: isMobile ? 20 : 50, opacity: 0 }, '-=0.6')
+            .from('.hero p:not(.lead)', { duration: 0.9, y: isMobile ? 20 : 40, opacity: 0 }, '-=0.6')
+            .from('.hero .mt-4',        { duration: 0.8, y: isMobile ? 15 : 30, opacity: 0 }, '-=0.5')
+            .from('.profile-img',       { duration: 1.2, scale: 0.75, opacity: 0, ease: 'back.out(1.7)' }, '-=1');
 
         // — Section headers —
         gsap.utils.toArray('.section-header').forEach(el => {
