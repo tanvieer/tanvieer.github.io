@@ -253,7 +253,6 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: slideUp 0.8s ease-out forwards;
 }
 
 .hero .lead {
@@ -262,16 +261,10 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     font-weight: 600;
     color: var(--accent-green);
     margin-bottom: 18px;
-    animation: slideUp 0.8s ease-out 0.12s both;
 }
 
 .hero > .container > .row > div:first-child > p {
     color: var(--text-secondary);
-    animation: slideUp 0.8s ease-out 0.22s both;
-}
-
-.hero .mt-4 {
-    animation: slideUp 0.8s ease-out 0.32s both;
 }
 
 .hero .btn-light {
@@ -311,7 +304,6 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     box-shadow: 0 20px 60px rgba(74, 144, 226, 0.2),
                 0 0 0 10px rgba(74, 144, 226, 0.04);
     transition: transform 0.4s, box-shadow 0.4s;
-    animation: scaleIn 0.9s ease-out 0.15s both;
 }
 
 .hero .profile-img:hover {
@@ -319,6 +311,20 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     box-shadow: 0 28px 70px rgba(74, 144, 226, 0.3),
                 0 0 0 10px rgba(74, 144, 226, 0.08);
     animation: float 3s ease-in-out infinite;
+}
+
+/* tsParticles canvas */
+#tsparticles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+
+/* Keep hero content above particle canvas */
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* ==========================================
@@ -382,14 +388,21 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     background: var(--bg-card);
     border: 1px solid var(--border);
     box-shadow: 0 4px 20px var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    transition: box-shadow 0.3s, border-color 0.3s;
     border-radius: 16px;
     color: var(--text-primary);
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .card:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 12px 40px rgba(74, 144, 226, 0.15);
+    box-shadow: 0 16px 48px rgba(74, 144, 226, 0.2);
+}
+
+/* Vanilla-Tilt glare element */
+.js-tilt-glare {
+    border-radius: inherit;
 }
 
 /* ==========================================
