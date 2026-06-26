@@ -17,8 +17,17 @@ if ('serviceWorker' in navigator) {
 (function () {
     const splash = document.getElementById('splash-screen');
     if (!splash) return;
+
+    function hideSplash() {
+        splash.classList.add('hidden');
+    }
+
+    // Hard cap: always hide within 2.5s even if CDN scripts are slow/stalled
+    const hardCap = setTimeout(hideSplash, 2500);
+
     window.addEventListener('load', () => {
-        setTimeout(() => splash.classList.add('hidden'), 1400);
+        clearTimeout(hardCap);
+        setTimeout(hideSplash, 600);
     });
 })();
 
