@@ -280,32 +280,83 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks    = document.querySelectorAll('.nav-link[href^="#"]');
     const mobileItems = document.querySelectorAll('.mobile-nav-item');
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
+    // — Sliding pill indicator —
+    const navIndicator = document.getElementById('navIndicator');
+    function updateNavIndicator(activeItem) {
+        if (!navIndicator || !activeItem) return;
+        const nav = document.getElementById('mobileBottomNav');
+        if (!nav || window.innerWidth > 768) return;
+        const navRect  = nav.getBoundingClientRect();
+        const itemRect = activeItem.getBoundingClientRect();
+        const iW = navIndicator.offsetWidth || 52;
+        const left = itemRect.left - navRect.left + (itemRect.width - iW) / 2;
+        navIndicator.style.left    = left + 'px';
+        navIndicator.style.opacity = '1';
+    }
 
-                // Desktop nav
-                navLinks.forEach(link => link.classList.remove('active'));
-                const activeDesktop = document.querySelector(`.nav-link[href="#${id}"]`);
-                if (activeDesktop) activeDesktop.classList.add('active');
+    // — Scroll-based active section detection (reliable) —
+    let lastActiveId = '';
+    let navScrollTicking = false;
 
-                // Mobile bottom nav
-                mobileItems.forEach(item => item.classList.remove('active'));
-                const activeMobile = document.querySelector(`.mobile-nav-item[data-section="${id}"]`);
-                if (activeMobile) activeMobile.classList.add('active');
-            }
+    function syncActiveNav() {
+        // trigger line = 40% down the viewport
+        const triggerY = window.scrollY + window.innerHeight * 0.4;
+        let current = sections[0];
+        sections.forEach(sec => {
+            if (sec.offsetTop <= triggerY) current = sec;
         });
-    }, { threshold: 0.3 });
+        const id = current.id;
+        if (id === lastActiveId) return;
+        lastActiveId = id;
 
-    sections.forEach(sec => sectionObserver.observe(sec));
+        // Desktop nav
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeDesktop = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (activeDesktop) activeDesktop.classList.add('active');
+
+        // Mobile bottom nav + pill
+        mobileItems.forEach(item => item.classList.remove('active'));
+        const activeMobile = document.querySelector(`.mobile-nav-item[data-section="${id}"]`);
+        if (activeMobile) {
+            activeMobile.classList.add('active');
+            updateNavIndicator(activeMobile);
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        if (navScrollTicking) return;
+        navScrollTicking = true;
+        requestAnimationFrame(() => { syncActiveNav(); navScrollTicking = false; });
+    }, { passive: true });
+
+    // Initialise on load
+    requestAnimationFrame(syncActiveNav);
 
     // ==========================================
-    // Mobile Bottom Nav – smooth scroll
+    // Mobile Bottom Nav – smooth scroll + ripple
     // ==========================================
     mobileItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
+
+            // Immediately update active state — don't wait for IntersectionObserver
+            mobileItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            updateNavIndicator(item);
+
+            // Ripple
+            const rect   = item.getBoundingClientRect();
+            const touch  = e.touches ? e.touches[0] : e;
+            const x      = (touch.clientX || rect.left + rect.width / 2) - rect.left;
+            const y      = (touch.clientY || rect.top  + rect.height / 2) - rect.top;
+            const ripple = document.createElement('span');
+            ripple.className = 'nav-ripple';
+            const size   = Math.max(rect.width, rect.height) * 1.4;
+            ripple.style.cssText = `width:${size}px;height:${size}px;left:${x - size/2}px;top:${y - size/2}px`;
+            item.appendChild(ripple);
+            ripple.addEventListener('animationend', () => ripple.remove());
+
+            // Scroll
             const target = document.querySelector(item.getAttribute('href'));
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
