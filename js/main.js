@@ -280,26 +280,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks    = document.querySelectorAll('.nav-link[href^="#"]');
     const mobileItems = document.querySelectorAll('.mobile-nav-item');
 
-    // — Sliding pill indicator —
-    const navIndicator = document.getElementById('navIndicator');
-    function updateNavIndicator(activeItem) {
-        if (!navIndicator || !activeItem) return;
-        const nav = document.getElementById('mobileBottomNav');
-        if (!nav || window.innerWidth > 768) return;
-        const navRect  = nav.getBoundingClientRect();
-        const itemRect = activeItem.getBoundingClientRect();
-        const iW = navIndicator.offsetWidth || 52;
-        const left = itemRect.left - navRect.left + (itemRect.width - iW) / 2;
-        navIndicator.style.left    = left + 'px';
-        navIndicator.style.opacity = '1';
-    }
-
     // — Scroll-based active section detection (reliable) —
     let lastActiveId = '';
     let navScrollTicking = false;
 
     function syncActiveNav() {
-        // trigger line = 40% down the viewport
         const triggerY = window.scrollY + window.innerHeight * 0.4;
         let current = sections[0];
         sections.forEach(sec => {
@@ -314,13 +299,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeDesktop = document.querySelector(`.nav-link[href="#${id}"]`);
         if (activeDesktop) activeDesktop.classList.add('active');
 
-        // Mobile bottom nav + pill
+        // Mobile bottom nav
         mobileItems.forEach(item => item.classList.remove('active'));
         const activeMobile = document.querySelector(`.mobile-nav-item[data-section="${id}"]`);
-        if (activeMobile) {
-            activeMobile.classList.add('active');
-            updateNavIndicator(activeMobile);
-        }
+        if (activeMobile) activeMobile.classList.add('active');
     }
 
     window.addEventListener('scroll', () => {
@@ -329,7 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
         requestAnimationFrame(() => { syncActiveNav(); navScrollTicking = false; });
     }, { passive: true });
 
-    // Initialise on load
     requestAnimationFrame(syncActiveNav);
 
     // ==========================================
@@ -339,10 +320,9 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('click', (e) => {
             e.preventDefault();
 
-            // Immediately update active state — don't wait for IntersectionObserver
+            // Immediately update active state — don't wait for scroll event
             mobileItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
-            updateNavIndicator(item);
 
             // Ripple
             const rect   = item.getBoundingClientRect();

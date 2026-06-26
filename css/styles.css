@@ -1311,77 +1311,83 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
         background: rgba(13, 17, 23, 0.96);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-top: 1px solid rgba(74, 144, 226, 0.18);
+        border-top: 1px solid rgba(74, 144, 226, 0.15);
         z-index: 1050;
-        padding: 6px 0;
+        padding: 10px 0 6px;
         padding-bottom: calc(6px + env(safe-area-inset-bottom));
         justify-content: space-around;
-        align-items: stretch;
+        align-items: flex-end;
         box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Sliding pill indicator */
-    #navIndicator {
-        position: absolute;
-        top: 6px;
-        left: 0;
-        width: 52px;
-        height: 36px;
-        background: linear-gradient(135deg, rgba(74, 144, 226, 0.18), rgba(100, 196, 100, 0.08));
-        border: 1px solid rgba(74, 144, 226, 0.28);
-        border-radius: 13px;
-        box-shadow: 0 0 18px rgba(74, 144, 226, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-        transition: left 0.42s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    opacity 0.3s ease;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0;
+        overflow: visible;
     }
 
     .mobile-nav-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 3px;
+        justify-content: flex-end;
+        gap: 4px;
         text-decoration: none;
-        color: rgba(139, 148, 158, 0.5);
+        color: rgba(139, 148, 158, 0.45);
         font-size: 0.62rem;
         font-family: var(--font-body);
         font-weight: 500;
-        padding: 6px 14px;
-        border-radius: 14px;
-        transition: color 0.25s ease;
+        padding: 0 14px 6px;
         -webkit-tap-highlight-color: transparent;
         position: relative;
         flex: 1;
         letter-spacing: 0.02em;
-        z-index: 1;
-        overflow: hidden;
+        overflow: visible;
+        min-height: 52px;
     }
 
     .mobile-nav-item i {
         font-size: 1.15rem;
-        transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
                     color 0.25s ease,
                     filter 0.25s ease;
         display: block;
+        position: relative;
+        z-index: 1;
     }
 
     .mobile-nav-item span {
         display: block;
         line-height: 1;
-        transition: opacity 0.25s ease, color 0.25s ease;
+        transition: color 0.25s ease, opacity 0.25s ease;
+        opacity: 0.6;
     }
 
-    .mobile-nav-item.active {
-        color: var(--accent-blue);
+    /* Floating bubble behind active icon */
+    .mobile-nav-item::before {
+        content: '';
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, rgba(74, 144, 226, 0.22), rgba(100, 196, 100, 0.1));
+        border: 1px solid rgba(74, 144, 226, 0.3);
+        box-shadow: 0 0 22px rgba(74, 144, 226, 0.28),
+                    0 4px 14px rgba(74, 144, 226, 0.15),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    opacity 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mobile-nav-item.active::before {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
     }
 
     .mobile-nav-item.active i {
-        transform: translateY(-5px) scale(1.22);
+        transform: translateY(-10px) scale(1.2);
         color: var(--accent-blue);
-        filter: drop-shadow(0 0 8px rgba(74, 144, 226, 0.65));
+        filter: drop-shadow(0 0 8px rgba(74, 144, 226, 0.7));
     }
 
     .mobile-nav-item.active span {
@@ -1393,9 +1399,9 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     .mobile-nav-item .nav-ripple {
         position: absolute;
         border-radius: 50%;
-        background: rgba(74, 144, 226, 0.28);
+        background: rgba(74, 144, 226, 0.22);
         transform: scale(0);
-        animation: navRipple 0.52s ease-out forwards;
+        animation: navRipple 0.5s ease-out forwards;
         pointer-events: none;
     }
 
@@ -1405,7 +1411,7 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
 
     /* Body padding so content isn't behind bottom nav */
     body {
-        padding-bottom: calc(68px + env(safe-area-inset-bottom));
+        padding-bottom: calc(72px + env(safe-area-inset-bottom));
     }
 
     /* Hide desktop hamburger nav on mobile — bottom nav replaces it */
