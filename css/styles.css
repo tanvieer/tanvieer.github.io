@@ -697,6 +697,24 @@ p { font-weight: 400; letter-spacing: 0.01em; color: var(--text-secondary); }
     color: white;
 }
 
+.project-card .btn-outline-primary {
+    background: transparent;
+    border: 1.5px solid var(--accent-blue);
+    color: var(--accent-blue);
+    padding: 7px 19px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.project-card .btn-outline-primary:hover {
+    background: var(--accent-blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(74, 144, 226, 0.45);
+}
+
 /* ==========================================
    Award Cards
    ========================================== */
