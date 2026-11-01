@@ -1,5 +1,5 @@
 /* Service Worker – Portfolio Cache */
-const CACHE = 'tanvir-portfolio-v2';
+const CACHE = 'tanvir-portfolio-v3';
 const PRECACHE = [
     '/',
     '/index.html',
@@ -24,13 +24,17 @@ self.addEventListener('activate', e => {
     self.clients.claim();
 });
 
+// Fetch from the network and refresh the cache; fall back to the cache only when offline,
+// so visitors always see the latest page after an update.
 self.addEventListener('fetch', e => {
-    if (e.request.method !== 'GET') return;
+    if (e.request.method !== 'GET' || !e.request.url.startsWith(self.location.origin)) return;
     e.respondWith(
-        caches.match(e.request).then(cached => cached || fetch(e.request).then(res => {
-            const clone = res.clone();
-            caches.open(CACHE).then(c => c.put(e.request, clone));
+        fetch(e.request).then(res => {
+            if (res.ok) {
+                const clone = res.clone();
+                caches.open(CACHE).then(c => c.put(e.request, clone));
+            }
             return res;
-        }))
+        }).catch(() => caches.match(e.request))
     );
 });
