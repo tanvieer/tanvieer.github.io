@@ -1,5 +1,5 @@
 /* Service Worker – Portfolio Cache */
-const CACHE = 'tanvir-portfolio-v1';
+const CACHE = 'tanvir-portfolio-v2';
 const PRECACHE = [
     '/',
     '/index.html',

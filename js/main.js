@@ -351,3 +351,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Videos in modals load only when the modal opens, and stop when it closes
+document.querySelectorAll('.modal iframe[data-src]').forEach(frame => {
+    const modal = frame.closest('.modal');
+    modal.addEventListener('show.bs.modal', () => { frame.src = frame.dataset.src; });
+    modal.addEventListener('hidden.bs.modal', () => { frame.removeAttribute('src'); });
+});

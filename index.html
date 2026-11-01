@@ -587,6 +587,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="project-card" style="overflow: hidden;">
+                        <div class="position-relative" data-bs-toggle="modal" data-bs-target="#modal-trambar" style="cursor: pointer;">
+                            <img src="images/Personal Projects/trambar_banner.jpg" class="card-img-top" alt="TramBar: live departures in the Mac menu bar" style="height: 250px; object-fit: cover; object-position: right center;">
+                            <span class="position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center rounded-circle" aria-hidden="true" style="width: 68px; height: 68px; background: rgba(0, 0, 0, .55); color: #fff; font-size: 1.6rem;"><i class="fas fa-play" style="margin-left: 4px;"></i></span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-train-tram me-2" style="color: var(--accent-color);"></i>TramBar – Live Departures in the Mac Menu Bar</h5>
+                            <p class="card-text">A macOS menu bar app for Chemnitz and the VMS area. The menu bar shows the next tram from your stop; one click shows every departure with live delays, saved routes with platforms, and the stops near you. Free and open source, installed with one Homebrew command.</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-trambar"><i class="fas fa-expand-alt me-2"></i>View Details</button>
+                                <a href="https://github.com/tanvieer/trambar" target="_blank" rel="noopener" class="btn btn-outline-primary"><i class="fab fa-github me-2"></i>GitHub</a>
+                                <a href="https://youtu.be/9cNxedOo6dk" target="_blank" rel="noopener" class="btn btn-outline-danger"><i class="fab fa-youtube me-2"></i>Trailer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1131,6 +1148,49 @@
                         <a href="https://apps.apple.com/app/facemosque-prayer-times/id6806985020" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
                             <i class="fab fa-apple me-2"></i>App Store
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for TramBar -->
+    <div class="modal fade" id="modal-trambar" tabindex="-1" aria-labelledby="modal-trambarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-trambarLabel"><i class="fas fa-train-tram me-2"></i>TramBar – Live Departures in the Mac Menu Bar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9 mb-4" style="border-radius: 12px; overflow: hidden; background: #000;">
+                        <iframe data-src="https://www.youtube-nocookie.com/embed/9cNxedOo6dk?rel=0" title="TramBar trailer" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <p>Is your tram two minutes away, or did you just miss it? Instead of unlocking a phone and searching for a stop, TramBar puts the answer in the Mac's menu bar, for example <strong>2 · 4 min</strong>. One click opens a panel with everything else. It covers CVAG trams and buses, the Chemnitz Bahn and DB regional trains across the VMS area (Verkehrsverbund Mittelsachsen).</p>
+                    <h6><i class="fas fa-list-ul me-2"></i>Features</h6>
+                    <ul>
+                        <li><strong>Your stops</strong> — the next departures with live delays, cancellations and platforms.</li>
+                        <li><strong>Your routes</strong> — saved trips such as Chemnitz Hbf → Dresden-Neustadt, with times, changes and platforms.</li>
+                        <li><strong>Near you</strong> — the closest stops and what leaves from them, if location is allowed.</li>
+                        <li>Refreshes every 30 seconds; the countdowns tick every second.</li>
+                    </ul>
+                    <div class="row g-3 my-2">
+                        <div class="col-md-4"><img src="images/Personal Projects/trambar_stops.jpg" class="img-fluid rounded" alt="Departures from a stop with a +3 delay" loading="lazy"><small class="d-block text-center mt-1" style="opacity: .75;">Live delays</small></div>
+                        <div class="col-md-4"><img src="images/Personal Projects/trambar_route.jpg" class="img-fluid rounded" alt="Route Chemnitz Hbf to Dresden-Neustadt" loading="lazy"><small class="d-block text-center mt-1" style="opacity: .75;">Saved routes</small></div>
+                        <div class="col-md-4"><img src="images/Personal Projects/trambar_nearby.jpg" class="img-fluid rounded" alt="Nearby stops with distances" loading="lazy"><small class="d-block text-center mt-1" style="opacity: .75;">Stops near you</small></div>
+                    </div>
+                    <h6><i class="fas fa-cogs me-2"></i>Tech</h6>
+                    <ul>
+                        <li>Swift and SwiftUI, built on <code>MenuBarExtra</code>, with no dependencies.</li>
+                        <li>Live data from the public VMS EFA timetable service; no account or API key.</li>
+                        <li>Distributed through my own Homebrew tap: the formula builds the app from source on the user's Mac, and <code>brew services</code> starts it at login.</li>
+                        <li>Found and fixed a macOS 27 bug where a <code>TimelineView</code> in the menu bar label stopped the status item from appearing.</li>
+                    </ul>
+                    <pre class="mb-3" style="background: #0d1117; color: #e6edf3; border-radius: 8px; padding: .75rem 1rem;"><code>brew install tanvieer/tap/trambar
+brew services start trambar</code></pre>
+                    <div class="d-flex gap-2 flex-wrap justify-content-center mt-3">
+                        <a href="https://github.com/tanvieer/trambar" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><i class="fab fa-github me-2"></i>View on GitHub</a>
+                        <a href="https://youtu.be/9cNxedOo6dk" target="_blank" rel="noopener" class="btn btn-outline-danger btn-lg"><i class="fab fa-youtube me-2"></i>Watch on YouTube</a>
                     </div>
                 </div>
             </div>
